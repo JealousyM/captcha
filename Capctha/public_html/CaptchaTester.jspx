@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelFormLayout id="pfl1">
+          <f:facet name="footer"/>
+          <af:image source="/captchaservlet"
+                    id="i1" inlineStyle="width:251px; height:76.0px;"/>
+          <af:commandButton text="can't read image" id="cb2"
+                            partialSubmit="false"/>
+          <af:panelLabelAndMessage label="Are U a robot?" id="plam1">
+            <af:panelGroupLayout id="pgl1" layout="horizontal" halign="left">
+              <af:inputText id="it1" value="#{requestScope.bestGuess}"/>
+              <af:commandButton text="try" id="cb1"
+                                actionListener="#{HandleCaptchaBean.verifyAnswer}"
+                                partialSubmit="true" immediate="false"/>
+            </af:panelGroupLayout>
+            <af:message id="m1" messageType="info" for="it1"/>
+          </af:panelLabelAndMessage>
+        </af:panelFormLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
