@@ -98,6 +98,14 @@
          <string v="JSP"/>
          <string v="Java"/>
          <string v="HTML"/>
+         <string v="Ant"/>
+      </list>
+   </hash>
+   <hash n="oracle.jdeveloper.compiler.ant.AntConfiguration">
+      <value n="makeTarget" v="deploy"/>
+      <url n="projectBuildfile" path="../build.xml"/>
+      <list n="targetList">
+         <string v="deploy"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
@@ -131,6 +139,81 @@
          <string v="-Xlint:-fallthrough"/>
          <string v="-Xlint:-serial"/>
          <string v="-Xlint:-unchecked"/>
+      </list>
+   </hash>
+   <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
+      <hash n="profileDefinitions">
+         <hash n="captchaPrj">
+            <hash n="appletArchives"/>
+            <hash n="appletFiles">
+               <value n="autoInclude" v="true"/>
+               <list n="selectionFilters">
+                  <string v="oracle.jdevimpl.deploy.common.JavaSelectionFilter"/>
+               </list>
+            </hash>
+            <hash n="archiveOptions">
+               <value n="hasManifest" v="false"/>
+            </hash>
+            <value n="contextRoot" v="Captcha"/>
+            <url n="earURL" path="deploy/captchaPrj.ear"/>
+            <value n="enterpriseAppName" v="captchaPrj"/>
+            <hash n="fileGroups">
+               <list n="groups">
+                  <hash>
+                     <list n="contributors">
+                        <hash>
+                           <value n="type" v="5"/>
+                        </hash>
+                     </list>
+                     <value n="displayName" v="Web Files"/>
+                     <hash n="filters">
+                        <list n="rules"/>
+                     </hash>
+                     <value n="internalName" v="web-files"/>
+                     <value n="type" v="1"/>
+                  </hash>
+                  <hash>
+                     <list n="contributors">
+                        <hash>
+                           <value n="type" v="2"/>
+                        </hash>
+                        <hash>
+                           <value n="type" v="7"/>
+                        </hash>
+                     </list>
+                     <value n="displayName" v="WEB-INF/classes"/>
+                     <hash n="filters">
+                        <list n="rules"/>
+                     </hash>
+                     <value n="internalName" v="project-output"/>
+                     <value n="targetWithinJar" v="WEB-INF/classes"/>
+                     <value n="type" v="1"/>
+                  </hash>
+                  <hash>
+                     <value n="displayName" v="WEB-INF/lib"/>
+                     <hash n="filters">
+                        <list n="rules">
+                           <hash>
+                              <value n="pattern" v="**"/>
+                           </hash>
+                        </list>
+                     </hash>
+                     <value n="internalName" v="libraries"/>
+                     <value n="targetWithinJar" v="WEB-INF/lib"/>
+                     <value n="type" v="3"/>
+                  </hash>
+               </list>
+            </hash>
+            <url n="jarURL" path="deploy/captchaPrj.war"/>
+            <hash n="libraryDependencies">
+               <value n="IncludeLibrariesFromOtherContainers" v="true"/>
+            </hash>
+            <value n="profileClass" v="oracle.jdeveloper.deploy.war.WarProfile"/>
+            <value n="profileName" v="captchaPrj"/>
+         </hash>
+      </hash>
+      <list n="profileList">
+         <string v="captchaPrj"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
